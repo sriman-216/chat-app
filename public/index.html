@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Chatroom</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <div class="app">
+
+    <div class="screen home-screen active">
+      <h1>Welcome to the Chatroom</h1>
+      <button id="go-to-signup">Sign Up</button>
+      <button id="go-to-signin">Sign In</button>
+    </div>
+
+    <div class="screen signup-screen">
+      <div class="form">
+        <h1>Sign Up</h1>
+        <div class="form-input">
+          <label>UserId</label>
+          <input type="text" id="signup-username">
+        </div>
+        <div class="form-input">
+          <label>Password</label>
+          <input type="password" id="signup-password">
+        </div>
+        <div class="form-input">
+          <label>Confirm Password</label>
+          <input type="password" id="confirm-password">
+        </div>
+        <div class="form-input">
+          <button id="signup">Sign Up</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="screen signin-screen">
+      <div class="form">
+        <h1>Sign In</h1>
+        <div class="form-input">
+          <label>UserId</label>
+          <input type="text" id="signin-username">
+        </div>
+        <div class="form-input">
+          <label>Password</label>
+          <input type="password" id="signin-password">
+        </div>
+        <div class="form-input">
+          <button id="signin">Sign In</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen chat-screen">
+      <div class="header">
+        <div class="logo">Chatroom</div>
+        <button id="profile">Profile</button>
+        <button id="exit-chat">Exit</button>
+      </div>
+      <div class="messages"></div>
+      <div class="typebox">
+        <input type="text" id="message-input">
+        <button id="send-message">Send</button>
+      </div>
+    </div>
+
+    <div class="screen profile-view">
+      <div class="header">
+        <div class="logo">Profile</div>
+        <button id="edit-profile">Edit</button>
+        <button id="back-to-chat">Back to Chat</button>
+      </div>
+      <div class="profile-details">
+        <!-- Display user profile details here -->
+        <label>Name</label>
+        <p><span id="profile-name"></span></p>
+        <label>Email:</label>
+        <p><span id="profile-email"></span></p>
+        <!-- Add more profile details as needed -->
+      </div>
+    </div>
+
+    <div class="screen profile-edit">
+      <div class="header">
+        <div class="logo">Edit Profile</div>
+        <button id="save-profile">Save</button>
+        <button id="cancel-edit">Cancel</button>
+      </div>
+      <div class="profile-form">
+        <div class="form-input">
+          <label for="edit-name">Name:</label>
+          <input type="text" id="edit-name">
+        </div>
+        <div class="form-input">
+          <label for="edit-email">Email:</label>
+          <input type="email" id="edit-email">
+        </div>
+
+        <!-- Add more fields for editing profile -->
+      </div>
+    </div>
+
+  </div>
+  
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="code.js"></script>
+</body>
+
+</html>
